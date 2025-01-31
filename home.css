@@ -176,11 +176,11 @@ nav li:hover .sub-menu {
   gap: 65px;
 }
 .hero .left {
-  width: 60%;
+  width: 65%;
 }
 .hero .left h1 {
-  font-size: 3.6rem;
-  line-height: 55px;
+  font-size: 3.1rem;
+  line-height: 52px;
   color: var(--clr-white);
   color: #201e1f;
   color: #0f267d;
@@ -601,7 +601,7 @@ p {
 
 .faq-item {
   border-bottom: 1px solid #ddd;
-  padding: 18px 0;
+  /* padding: 18px 0; */
 }
 
 .faq-header {
@@ -609,6 +609,7 @@ p {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  padding: 18px 5px;
 }
 
 .faq-header h3 {
@@ -632,14 +633,42 @@ p {
 .faq-body.open {
   height: auto; /* Height is dynamically controlled by JavaScript */
 }
-
-.faq-body p {
-  font-size: 0.9rem;
-  margin: 10px 0 0;
-  padding: 0 10px;
+.faq-body{
+}
+.faq-body-content {
+  padding:0 10px 20px 10px;
   color: #555;
 }
-
+.faq-body ul{
+  margin-top: 1rem;
+ display: flex;flex-direction: column;gap: 10px;
+}
+.faq-body li{
+  position: relative;
+  font-size: 14px;
+  font-weight: 400;
+  /* margin-bottom: 5px; */
+}
+.faq-body li::before{
+  content: '-';
+  position: absolute;
+  top: 0%;
+  left: -10px;
+  /* transform: translateY(-50%); */
+  list-style-type: circle;
+}
+.faq-body p {
+  font-size: 0.95rem;
+  margin-bottom:3px ;
+  /* padding: 0 10px; */
+}
+.p-black{
+  color: #2f2f2f !important;
+  font-weight: 500;
+}
+.m-15{
+  margin-top: 15px;
+}
 /* -----Enf of Faqs-----  */
 
 /* marquee */
