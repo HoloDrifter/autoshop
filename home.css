@@ -127,6 +127,7 @@ nav li .sub-menu {
   background-color: #3737378c;
   width: 100%;
   transition: all 0.2s ease !important;
+  text-transform: capitalize;
 }
 .sub-menu li a:hover {
   /* background: linear-gradient(45deg, #ed1472, #eb79db, #7f99eb, #173498); */
@@ -166,20 +167,18 @@ nav li:hover .sub-menu {
   z-index: -1;
 }
 #product-hero::before{
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  isolation: isolate;
-  width: 200px;
-  width: 100%;
-  transform: scaleX(-1);
-  height: 100%;
   background: url("./img/g3.jpg");
   background-size: cover;
   background-position: center;
   opacity: .6;
-  z-index: -1;
+}
+#uk-company-hero::before{
+  background: url("./img/g5.jpg");
+  background-size: cover;
+  background-position: center;
+  transform: scaleX(-1);
+
+  opacity: .6;
 }
 .hero .container {
   display: flex;
@@ -996,7 +995,7 @@ p {
 
 /* Product page */
 /* offer section */
-.offer_section .container{
+.offer_section .container,.explanation-top{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1087,7 +1086,7 @@ p {
   display: inline-block;
   font-size: 20px;
   /* color: var(--clr-white); */
-  transform: rotate(-90deg);
+  /* transform: rotate(-90deg); */
 }
 .specific-service{
   padding: 80px 20px;
@@ -1224,3 +1223,181 @@ input[type="radio"]:checked + label:after {
 input[type="radio"] + label:hover:before {
   border-color: #4CAF50;
 }
+
+/* marquee */
+.com-marquee-container {
+  /* background: ; */
+  /* padding: 2rem 0; */
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+
+.com-marquee-content {
+  min-width: 100%;
+  /* border: 1px solid; */
+  display: flex;
+
+  animation: scroll 25s linear infinite;
+  white-space: nowrap;
+}
+.com-logos-wrapper{
+  display: flex;
+  /* border: 1px solid red; */
+  align-items: center;
+  justify-content: space-around;
+  min-width: 50%;
+}
+.com-logo-wrapper {
+  flex-shrink: 0;
+  /* padding: 0 2rem; */
+}
+
+.com-logo-wrapper img {
+  width: 84px;
+  height: 84px;
+  object-fit: contain;
+}
+
+@keyframes scroll {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-50%);
+  }
+}
+
+/* Add a smooth mask effect at the edges */
+.com-marquee-container::before,
+.com-marquee-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 70px;
+  height: 100%;
+  z-index: 2;
+}
+
+.com-marquee-container::before {
+  left: 0;
+  background: linear-gradient(to right, #f5f5f5, transparent);
+}
+
+.com-marquee-container::after {
+  right: 0;
+  background: linear-gradient(to left, #f5f5f5, transparent);
+}
+
+/* Explanation section */
+.company-explanation_section .section_head {
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+}
+
+.explanation-left,.explanation-right{
+  width: 50%;
+}
+.explanation-right h2{
+  margin-bottom: 8px;
+font-size: 28px;
+
+}
+.explanation-right ul{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+.explanation-right ul p{
+  font-weight: 600;
+  color: var(--clr-black) !important;
+  
+}
+.explanation-right li {
+  list-style-type:square !important;
+  font-size: 15px;
+  color: #7e7e7e;
+  margin-left: 12px;
+}
+
+.explanation-bottom{
+  margin-top: 4rem;
+}
+.explanation-bottom h3{
+  text-align: center;
+  font-size: 22px;
+
+}
+.explanation-boxes{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:10px;
+  margin-top: 1.5rem;
+}
+.explanation-box{
+  padding: 14px;
+  border-radius: 6px;
+  border: 1px solid;
+}
+.explanation-box i{
+  font-size: 25px;
+}
+.explanation-box h4{
+  font-weight: 500;
+  margin: 1rem 0 .5rem 0;
+}
+.explanation-box p{
+  font-size: 14px;
+  line-height: 19px;
+}
+.explanation_sec-2{
+  margin-top: 9rem;
+}
+.explanation_sec-2 .explanation-top{
+  flex-direction: row-reverse;
+}
+.explanation_sec-2 .explanation-left{
+  display: flex;
+  justify-content: flex-end;
+}
+/* End Explanation section */
+/* uk-company pricing section */
+.uk-company-pricing .pricing-box{
+  height:auto ;
+  text-align: left;
+  align-items: flex-start;
+}
+.uk-company-pricing .price{
+  font-size: 35px
+}
+.uk-company-pricing .pricing-box:nth-child(2) .price{
+  font-size:42px;
+}
+.uk-company-pricing .pricing-boxes{
+  /* grid-template-columns: repeat(4,1fr); */
+}
+.price-small{
+  font-size: 26px !important;
+}
+.price-small span{
+  font-size: 16px;
+}
+.pricing-points{
+  margin-top: .8rem;
+  border-top: 1px solid #555 ;
+  padding-top: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pricing-points p{
+  font-size: 14px;
+  text-align: left;
+}
+.pricing-box:nth-child(5),.pricing-box:nth-child(6){
+  /* grid-column: span 2; */
+}
+/* End uk-company pricing section */
