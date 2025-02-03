@@ -180,6 +180,14 @@ nav li:hover .sub-menu {
 
   opacity: .6;
 }
+#banking-paradise-hero::before{
+  background: url("./img/g6.jpg");
+  background-size: cover;
+  background-position: center;
+  transform: scaleX(-1);
+
+  opacity: .7;
+}
 .hero .container {
   display: flex;
   align-items: center;
@@ -1130,13 +1138,16 @@ gap: 25px;
   gap: 25px;
 }
 
-#service-form input,textarea{
+#service-form input,textarea,#banking-paradise-form input, select{
   background-color: #313131;
   border: none ;
   width: 100%;
   color: #d5d5d5;
 }
-
+select{
+  border: none !important;
+  outline: none;
+}
 textarea{
   border-radius: 6px;           
     padding: 10px;                
@@ -1150,10 +1161,10 @@ textarea{
 textarea:focus {
   outline: none;                
 }
-#service-form input:focus, #service-form textarea:focus{
+#service-form input:focus, #service-form textarea:focus,#banking-paradise-form input:focus,#banking-paradise-form textarea:focus{
 border-color: rgb(37, 99, 235) ;
 }
-#service-form .box{
+#service-form .box, #banking-paradise-form .box{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1386,6 +1397,7 @@ font-size: 28px;
   font-size: 16px;
 }
 .pricing-points{
+  width: 100%;
   margin-top: .8rem;
   border-top: 1px solid #555 ;
   padding-top: 1.75rem;
@@ -1401,3 +1413,16 @@ font-size: 28px;
   /* grid-column: span 2; */
 }
 /* End uk-company pricing section */
+
+.offer-boxes p span{
+  font-weight: 600;
+    color: var(--clr-black) !important;
+    margin-top: 1rem;
+    display: inline-block;
+}
+.col-1-boxes{
+  width: 650px;
+align-self: center;
+justify-self:center ;
+  grid-template-columns:1fr !important ;
+}
